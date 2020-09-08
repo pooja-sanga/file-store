@@ -1,0 +1,5 @@
+package com.filestore.exception;
+
+public class FileUploadExceptionAdvice {
+
+}

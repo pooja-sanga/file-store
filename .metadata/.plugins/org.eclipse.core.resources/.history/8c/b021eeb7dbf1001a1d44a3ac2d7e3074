@@ -1,0 +1,46 @@
+package com.filestore.swagger;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.usign.common.utils.constants.CommonConstants;
+
+import io.swagger.v3.oas.models.ExternalDocumentation;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+
+/**
+ * This class is the configuration class for open-api/swagger documentation
+ * 
+ * @author pooja.sanga
+ *
+ */
+@Configuration
+public class OpenApiConfig {
+
+	@Bean
+	public OpenAPI customOpenAPI(@Value(CommonConstants.APPLICATION_DESCRIPTION) String appDesciption,
+			@Value(CommonConstants.APPLICATION_VERSION) String appVersion) {
+		return new OpenAPI()
+				.info(new Info().title(CommonConstants.TITLE).version(appVersion).description(appDesciption)
+						.termsOfService(CommonConstants.USIGN_TERM_OF_SERVICES).contact(getContact()))
+				.externalDocs(getExternalDocumentation());
+	}
+
+	public Contact getContact() {
+		Contact contact = new Contact();
+		contact.email(CommonConstants.USIGN_EMAIL);
+		contact.name(CommonConstants.NAME);
+		contact.url(CommonConstants.URL);
+		return contact;
+	}
+
+	public ExternalDocumentation getExternalDocumentation() {
+		ExternalDocumentation externalDocumentation = new ExternalDocumentation();
+		externalDocumentation.description(CommonConstants.EXTERNAL_DESCRIPTION);
+		externalDocumentation.url(CommonConstants.EXTERNAL_URL);
+		return externalDocumentation;
+	}
+

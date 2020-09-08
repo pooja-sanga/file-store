@@ -1,0 +1,5 @@
+package com.filestore.swagger;
+
+public class SwaggerConfig {
+
+}

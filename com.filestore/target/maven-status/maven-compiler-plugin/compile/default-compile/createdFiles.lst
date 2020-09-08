@@ -1,0 +1,8 @@
+com\filestore\model\FileInfo.class
+com\filestore\service\FilesStorageServiceImpl.class
+com\filestore\message\ResponseMessage.class
+com\filestore\exception\FileUploadExceptionAdvice.class
+com\filestore\controller\FilesController.class
+com\filestore\service\FilesStorageService.class
+com\filestore\Application.class
+com\filestore\swagger\SwaggerConfig.class

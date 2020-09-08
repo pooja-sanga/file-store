@@ -1,0 +1,5 @@
+package com.filestore.model;
+
+public class FileInfo {
+
+}
